@@ -1,0 +1,44 @@
+﻿@model List<Networx.Models.EmployeeViewModel>
+
+<h2>List of Employees</h2>
+@if (Session["IsAdmin"] != null && bool.Parse(Session["IsAdmin"].ToString()))
+{
+    <button type="button" class="pull-right btn btn-primary" onclick="AddEmployeePopup()">Add New Employee</button>
+}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Employee Id</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Status</th>
+            @if (Session["IsAdmin"]!=null && bool.Parse(Session["IsAdmin"].ToString()))
+            {
+                <th>Actions</th>
+
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EmployeeId</td>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.EmployeeStatus.Name</td>
+                @if (Session["IsAdmin"] != null && bool.Parse(Session["IsAdmin"].ToString()))
+                {
+
+                    <td>
+                        <button class="btn btn-primary" onclick="GetEmployee('@item.Id')">Edit</button>
+                        <button class="btn btn-danger" onclick="DeleteEmployee('@item.Id')">Delete</button>
+                    </td>
+                }
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+

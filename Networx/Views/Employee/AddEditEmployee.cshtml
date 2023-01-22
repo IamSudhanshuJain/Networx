@@ -1,0 +1,48 @@
+﻿@model Networx.Models.EmployeeViewModel
+
+<div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Employee Details</h4>
+        </div>
+
+        <input type="hidden" id="statusId" value="@(Model.Id ==null && Model.EmployeeStatus==null ? "0" : @Model.EmployeeStatus.Id)" />
+        <div class="modal-body">
+
+            @if (Model.Id == null)
+            {
+                <div class="form-group">
+                    <label>EmployeeId</label>
+                    <input type="number" class="form-control" id="EmployeeId" value="@Model.EmployeeId" name="EmployeeId" />
+                </div>
+            }
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" id="EmployeeFirstName" value="@Model.FirstName" name="FirstName" />
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" id="EmployeeLastName" value="@Model.LastName" name="LastName" />
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" id="EmployeeEmail" value="@Model.Email" name="Email" />
+            </div>
+
+            <div class="form-group">
+                <label for="EmployeeStatus">Status</label>
+                <select class="form-control" id="EmployeeStatus" name="Status">
+                </select>
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="@(Model.Id ==null ?"AddEmployee()":"EditEmployee("+"'"+Model.Id+"'"+")")">Save</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>

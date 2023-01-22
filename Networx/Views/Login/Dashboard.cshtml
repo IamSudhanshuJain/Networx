@@ -1,0 +1,12 @@
+﻿@model List<Networx.Models.EmployeeViewModel>
+@{
+    ViewBag.Title = "Dashboard";
+}
+<div class="container" id="GetAllEmployeesTable">
+    @Html.Partial("_GetAllEmployees", Model)   
+</div>
+
+<!-- Modal -->
+<div id="editModal" class="modal fade" role="dialog">
+
+</div>
