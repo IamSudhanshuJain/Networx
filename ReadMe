@@ -1,0 +1,20 @@
+Steps to run this project:
+
+1. Download the whole project
+2. Run the Networx/DbScript_File/NetworxDb_ScriptFile.sql in database.
+3. Clean and build the project
+4. Run the application
+
+
+Credentials :
+We have created 2 different types of users as:
+a. Employee
+b. Admin
+
+Employee Login Creds:
+UserName : Florian.Bline
+Password : Welcome@1
+
+Admin Login Creds
+UserName : Robin.Peterson
+Password : Welcome@1
