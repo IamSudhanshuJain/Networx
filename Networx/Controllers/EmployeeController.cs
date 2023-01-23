@@ -5,16 +5,17 @@ using System.Web.Mvc;
 using AutoMapper;
 using Networx.Models;
 using NetworxBusinessLayer;
+using NetworxBusinessLayer.Interfaces;
 using NetworxBusinessLayer.Models;
 
 namespace Networx.Controllers
 {
     public class EmployeeController : SessionController // Custom Controller
     {
-        private readonly EmployeeService _employeeService;
+        private readonly IEmployeeService _employeeService;
 
         // GET: Employee
-        public EmployeeController(EmployeeService employeeService, IMapper mapper): base(mapper)
+        public EmployeeController(IEmployeeService employeeService, IMapper mapper): base(mapper)
         {
             _employeeService = employeeService;
         }

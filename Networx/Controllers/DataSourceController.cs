@@ -7,15 +7,16 @@ using System.Web.Mvc;
 using AutoMapper;
 using Networx.Models;
 using NetworxBusinessLayer;
+using NetworxBusinessLayer.Interfaces;
 
 namespace Networx.Controllers
 {
     public class DataSourceController : SessionController // Custom Controller
     {
-        private readonly DataSourceService _dataSourceService;
+        private readonly IDataSourceService _dataSourceService;
 
         // GET: Employee
-        public DataSourceController(DataSourceService dataSourceService, IMapper mapper) : base(mapper)
+        public DataSourceController(IDataSourceService dataSourceService, IMapper mapper) : base(mapper)
         {
             _dataSourceService = dataSourceService;
         }

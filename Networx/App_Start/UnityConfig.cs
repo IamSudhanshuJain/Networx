@@ -2,6 +2,7 @@ using System;
 using AutoMapper;
 using Networx.DataMapping;
 using NetworxBusinessLayer;
+using NetworxBusinessLayer.Interfaces;
 using NetworxDataLayer;
 using NetworxDataLayer.Interface;
 using Unity;
@@ -45,7 +46,9 @@ namespace Networx
                 cfg.AddProfile(new AutomapperConfiguration());
             });
 
-            container.RegisterType<EmployeeService>();
+            container.RegisterType<IEmployeeService, EmployeeService>();
+            container.RegisterType<IDataSourceService, DataSourceService>();
+            container.RegisterType<IAuthenticationService, AuthenticationService>();
             container.RegisterType(typeof(IRepository<>), typeof(Repository<>));
             container.RegisterInstance(config.CreateMapper());
             // NOTE: To load from web.config uncomment the line below.

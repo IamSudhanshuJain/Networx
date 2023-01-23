@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using NetworxBusinessLayer.Interfaces;
 using NetworxBusinessLayer.Models;
 using NetworxDataLayer.Entities;
 using NetworxDataLayer.Interface;
@@ -8,7 +9,7 @@ using NetworxDataLayer.Models;
 
 namespace NetworxBusinessLayer
 {
-    public class EmployeeService
+    public class EmployeeService : IEmployeeService
     {
         private readonly IRepository<Employee> _employeeRepository;
         public EmployeeService(IRepository<Employee> employeeRepository)

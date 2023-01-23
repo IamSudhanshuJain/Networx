@@ -59,6 +59,9 @@
     <Compile Include="AuthenticationService.cs" />
     <Compile Include="DataSourceService.cs" />
     <Compile Include="EmployeeService.cs" />
+    <Compile Include="Interfaces\IEmployeeService.cs" />
+    <Compile Include="Interfaces\IDataSourceService.cs" />
+    <Compile Include="Interfaces\IAuthenticationService.cs" />
     <Compile Include="Models\EmployeeRequestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

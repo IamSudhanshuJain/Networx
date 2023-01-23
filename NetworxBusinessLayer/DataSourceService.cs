@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using NetworxBusinessLayer.Interfaces;
 using NetworxDataLayer.Entities;
 using NetworxDataLayer.Interface;
 using NetworxDataLayer.Models;
 
 namespace NetworxBusinessLayer
 {
-    public class DataSourceService
+    public class DataSourceService : IDataSourceService 
     {
         private readonly IRepository<EmployeeStatus> _employeeStatusRepository;
         public DataSourceService(IRepository<EmployeeStatus> employeeStatusRepository)

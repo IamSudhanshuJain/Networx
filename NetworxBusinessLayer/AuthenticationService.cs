@@ -4,13 +4,14 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NetworxBusinessLayer.Interfaces;
 using NetworxDataLayer;
 using NetworxDataLayer.Entities;
 using NetworxDataLayer.Interface;
 
 namespace NetworxBusinessLayer
 {
-    public class AuthenticationService
+    public class AuthenticationService : IAuthenticationService
     {
         private readonly IRepository<AuthenticatedEntity> _authenticationRepository;
         public AuthenticationService(IRepository<AuthenticatedEntity> authenticationRepository)

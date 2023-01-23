@@ -3,15 +3,16 @@ using System.Web.Mvc;
 using AutoMapper;
 using Networx.Models;
 using NetworxBusinessLayer;
+using NetworxBusinessLayer.Interfaces;
 
 namespace Networx.Controllers
 {
     public class LoginController : SessionController // Custom Controller
     {
-        private readonly EmployeeService _employeeService;
-        private readonly AuthenticationService _authenticationService;
+        private readonly IEmployeeService _employeeService;
+        private readonly IAuthenticationService _authenticationService;
 
-        public LoginController(AuthenticationService authenticationService, EmployeeService employeeService, IMapper mapper) : base(mapper)
+        public LoginController(IAuthenticationService authenticationService, IEmployeeService employeeService, IMapper mapper) : base(mapper)
         {
             _employeeService = employeeService;
             _authenticationService = authenticationService;
